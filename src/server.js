@@ -3,7 +3,7 @@ import mongoose from "mongoose"
 import expressLayouts from "express-ejs-layouts"
 import path from "path"
 import { fileURLToPath } from "url"
-import indexRouter from "./controllers/index.js"
+import Routers from "./controllers/routers.js"
 import dotenv from "dotenv"
 
 if (process.env.NODE_ENV !== "production") {
@@ -25,6 +25,6 @@ app.set("views", __dirname + "/views")
 app.set("layout", "layouts/layout")
 app.use(expressLayouts)
 app.use(express.static("public"))
-app.use("/", indexRouter)
+app.use("/", Routers)
 
 export default app
